@@ -2,7 +2,7 @@ version: 2.1
 executors:
   docker-publisher:
     environment:
-      IMAGE_NAME: aakibkhan1212/building-on-ci
+      IMAGE_NAME: wentfrommr305/building-on-ci
     docker:
       - image: circleci/buildpack-deps:stretch
 jobs:
@@ -43,10 +43,10 @@ workflows:
       - build:
           filters:
             branches:
-              only: master
+              only: main
       - publish-latest:
           requires:
             - build
           filters:
             branches:
-              only: master
+              only: main
